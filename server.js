@@ -19,11 +19,11 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // Static frontend files
 // Make sure index.html is inside the frontend folder
-app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static(path.join(__dirname)));
 
 // Home route (important for Render)
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname,"../index.html"));
+  res.sendFile(path.join(__dirname,"index.html"));
 });
 
 // API Routes
