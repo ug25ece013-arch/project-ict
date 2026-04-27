@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Home route (important for Render)
 app.get("/", (req, res) => {
-  res.send("Backend is running successfully!");
+  res.sendFile(path.join(__dirname,"../index.html"));
 });
 
 // API Routes
