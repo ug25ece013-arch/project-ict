@@ -16,7 +16,12 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
-app.use(express.static(path.join(__dirname, "../frontend/")));
+app.use(express.static(path.join(__dirname, "frontend")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
+
 
 app.use("/analyze", analyzeRoute);
 app.use("/humanize", humanizeRoute);
